@@ -64,7 +64,9 @@ class Dog
   #  end
   #end
 
-  def self.new_from_db
+  def self.new_from_db(row)
+    dog_new = self.new(row)
+    dog_new
 
   end
 
