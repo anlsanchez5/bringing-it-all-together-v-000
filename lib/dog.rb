@@ -61,7 +61,7 @@ class Dog
       dog_data = dog[0]
       self.find_by_id(dog[0])
     else
-      dog = self..create(name:name,breed:breed)
+      dog = self.create(name:name,breed:breed)
     end
     dog
   end
