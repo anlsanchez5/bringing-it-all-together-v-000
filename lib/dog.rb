@@ -58,10 +58,11 @@ class Dog
   def self.find_or_create_by(name:,breed:)
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
     if !dog.empty?
+      @@all.select {|dog| dog.name == name && dog.breed == breed}
     else
       dog = self.create(name:name,breed:breed)
     end
-    @@all.select {|dog| dog.name == name && dog.breed == breed}
+
  end
 
 end
