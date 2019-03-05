@@ -59,7 +59,7 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
     if !dog.empty?
       dog = @@all.select {|dog| dog.name == name && dog.breed == breed}
-      binding.pry
+    #  binding.pry
     else
       dog = self.create(name:name,breed:breed)
     end
